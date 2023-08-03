@@ -3,13 +3,13 @@
 valid-move() {
     from=$1
     destination=$2
-    piece=$3
-    destination_piece=$4
+    piece=${board_positions[$from]}
+    destination_piece=${board_positions[$destination]}
 
     # check if the keys exist in the dictionary
     if [[ ! -v board_positions[$from] ]] || [[ ! -v board_positions[$destination] ]]
     then
-        echo "key does not exist"
+        echo "Key does not exist"
         valid_move=false
         return 1
     fi
@@ -28,7 +28,7 @@ valid-move() {
         echo "Trying to move Player 1's piece"
         valid_move=false
         return 3
-    elif [[ $piece == "\0" ]]
+    elif [[ $piece == "\0 \0" ]]
     then
         echo "trying to move an empty space"
         valid_move=false
@@ -36,12 +36,12 @@ valid-move() {
     fi
 
     # check if destination has the player's own piece on it or trying to take the King
-    if [[ ${piece:7:3} == ${destination_piece:7:3} ]]
+    if [[ ${piece:8:1} == ${destination_piece:8:1} ]]
     then
         echo "Trying to take your own piece"
         valid_move=false
         return 5
-    elif [[ ${destination_piece:10:1} == 'K' ]]
+    elif [[ ${destination_piece:10:1} == "K" ]]
     then    
         echo "Trying to take the King"
         valid_move=false
@@ -107,13 +107,14 @@ valid-move() {
                 valid_move=false
                 return 7
             # if the Pawn moves vertically and there is another piece in the way
-            elif [[ $horizontal -eq 0 ]] && [[ $destination_piece != "\0" ]]
+            elif [[ $horizontal -eq 0 ]] && [[ $destination_piece != "\0 \0" ]]
             then
-                echo "pawn moved vertically and theres was a piece in the way"
+                echo $destination_piece
+                echo "pawn moved vertically and there was a piece in the way"
                 valid_move=false
                 return 8
             # if the Pawn moves horizontally and there is no piece to take
-            elif [[ $horizontal -gt 0 ]] && [[ $destination_piece == "\0" ]]
+            elif [[ $horizontal -gt 0 ]] && [[ $destination_piece == "\0 \0" ]]
             then 
                 echo "pawn is moving horizontally with no piece to take"
                 valid_move=false
@@ -184,7 +185,7 @@ valid-move() {
                 return 18
             # else it is a valid move but need to check if there are pieces in the way
             else
-                piece_in_the_way
+                # piece_in_the_way
                 piece_in_way=$( piece_in_the_way )
                 if [[ $piece_in_way == true ]]
                 then
@@ -222,7 +223,7 @@ valid-move() {
                 return 23
             # else it is a valid move but need to check if there are pieces in the way
             else
-                piece_in_the_way
+                # piece_in_the_way
                 piece_in_way=$( piece_in_the_way )
                 if [[ $piece_in_way == true ]]
                 then
@@ -244,7 +245,7 @@ valid-move() {
                     return 25
                 # else it is a valid move but need to check if there are pieces in the way
                 else
-                    piece_in_the_way
+                    # piece_in_the_way
                     piece_in_way=$( piece_in_the_way )
                     if [[ $piece_in_way == true ]]
                     then
@@ -255,7 +256,7 @@ valid-move() {
                 fi
             # else it is a valid move but need to check if there are pieces in the way
             else
-                piece_in_the_way
+                # piece_in_the_way
                 piece_in_way=$( piece_in_the_way )
                 if [[ $piece_in_way == true ]]
                 then
