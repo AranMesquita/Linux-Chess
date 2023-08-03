@@ -20,8 +20,8 @@ do
     valid_move=false
     while [[ $valid_move == false ]]
     do 
-        read -p "Enter the postion of the piece you would like to move(letter and number e.g. G1): " from
-        read -p "Enter the postion you would like to move that piece to(letter and number e.g. F1): " destination
+        read -p "Enter the position of the piece you would like to move(letter and number e.g. G1): " from
+        read -p "Enter the position you would like to move that piece to(letter and number e.g. F1): " destination
         valid-move $from $destination
         invalid_move=
         if [[ $valid_move == false ]]
