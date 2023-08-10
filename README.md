@@ -2,7 +2,7 @@
 
 *\`Chess, like any creative activity, can exist only through the combined efforts of those who have creative talent, and those who have the ability to organize their creative work` ~ Mikhail Botvinnik.*
 
-Recently, my focus has been learning AWS (Amazon Web Services), and one of the most important operating system to know when using AWS is Linux. So as a personal challenge, I decided to develop an application exclusively utilizing Linux tools, including the Linux terminal for file creation, manipulation, and deletion, along with the use of the "nano" text editor to edit files, even this entire chess application was built only using the BASH programming language.
+Recently, my focus has been learning AWS (Amazon Web Services), and one of the most important operating system to know when using AWS is Linux. So as a personal challenge, I decided to develop an application exclusively utilizing Linux tools, including the Linux terminal for file creation, manipulation, and deletion, along with the use of the GNU nano text editor to edit files, even this entire chess application was built only using the BASH programming language.
 
 This chess game was built to be played in the Linux terminal, and was designed to be played with a friend, however my plan also involves implementing a chess AI in the future to enable solo gameplay.
 
