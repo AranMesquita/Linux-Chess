@@ -25,5 +25,5 @@ cd User/LINUX-CHESS/game-files
 ### 3. To play the game first enter the position(G1) of the piece you would like to play, then press enter, then enter position(F1) you would like to move the chess piece to, should look like the image below
 <img src="./README-assets/image-2.png" alt="image-2" width="600" height="350" />
 
-### 4. After you Player 1 is finnished playing their turn, the bored will swap sides so Player 2 can play, and will swap back when Player 2 is finnished
+### 4. After you Player 1's turn, the bored will swap sides, so Player 2 can play. After Player 2's turn, the board will swap back to Player 1's side
 <img src="./README-assets/image-3.png" alt="image-1" width="600" height="350" />
